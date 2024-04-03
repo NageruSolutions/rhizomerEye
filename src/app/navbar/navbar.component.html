@@ -4,10 +4,6 @@
 <button (click)="useLanguage('es')">es</button>
 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-left">
-    <img alt="Rhizomer Logo" class="pull-left" style="max-width:45px" src="assets/rhizomikEye.svg"/>
-  </a>
-  <a class="navbar-brand" [routerLink]="['']">Rhizomer<b>Eye</b></a>
   <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="navbarContent" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,9 +11,9 @@
 
   <div class="collapse navbar-collapse" id="navbarContent" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+<!--      <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/about']">{{ 'navbar.about' | translate }}</a>
-      </li>
+      </li> -->
       <li class="nav-item dropdown" *ngIf="isLoggedIn()" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="samplesDropdown" role="button" data-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>{{ 'navbar.datasets' | translate }}</a>
@@ -28,16 +24,16 @@
              [routerLink]="['/datasets/new']"><span class="fa fa-save"></span> {{ 'navbar.new' | translate }}</a>
         </div>
       </li>
-      <li class="nav-item dropdown" *ngIf="isAdmin()" ngbDropdown>
+<!--      <li class="nav-item dropdown" *ngIf="isAdmin()" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="adminDropdown" role="button" data-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>{{ 'navbar.administration' | translate }}</a>
         <div class="dropdown-menu" aria-labelledby="adminDropdown" ngbDropdownMenu>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
              [routerLink]="['/users']"><span class="fa fa-user"></span> {{ 'navbar.users' | translate }}</a>
         </div>
-      </li>
+      </li> -->
     </ul>
-    <ul class="navbar-nav" app-login-navbar></ul>
+    <!--<ul class="navbar-nav" app-login-navbar></ul>-->
     <ul class="navbar-nav">
       <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="languageDropdown" role="button" data-toggle="dropdown"

@@ -18,6 +18,7 @@ export class AuthenticationBasicService {
         'Authorization': authorization
       })
     };
+    console.log("login");
     return this.http.get(`${environment.API}/user`, httpOptions).pipe(
       map(data => {
         const user: User = new User(data);

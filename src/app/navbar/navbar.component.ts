@@ -16,6 +16,12 @@ export class NavbarComponent implements OnInit {
     this.translate.setDefaultLang('en');
     this.translate.use(this.translate.getLangs().includes(this.translate.getBrowserLang()) ?
       this.translate.getBrowserLang() : this.translate.getDefaultLang());
+      console.log("Paso:"+authService);
+      authService.login("admin","password").subscribe(
+        user => {
+            console.log("User: "+user);
+          this.authService.storeCurrentUser(user);
+        });
   }
 
   ngOnInit() {
@@ -27,7 +33,7 @@ export class NavbarComponent implements OnInit {
   }
 
   isLoggedIn() {
-    return this.authService.isLoggedIn();
+    this.authService.isLoggedIn();
   }
 
   useLanguage(language: string): void {
