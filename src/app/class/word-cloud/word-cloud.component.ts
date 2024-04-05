@@ -92,7 +92,7 @@ export class WordCloudComponent implements OnInit {
     this.fillScale = d3Scale.scaleOrdinal(d3ScaleChromatic.schemeCategory10);
     this.svg = d3.select('svg');
     this.width = this.svg.node().getBoundingClientRect().width;
-    this.height = window.innerHeight - this.svg.node().getBoundingClientRect().top - 50;
+    this.height = 650;
     this.svg = this.svg.attr('height', this.height).append('g')
       .attr('transform', 'translate(' + Math.floor(this.width / 2) + ',' + Math.floor(this.height / 2) + ')');
   }
